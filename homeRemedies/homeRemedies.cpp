@@ -26,7 +26,7 @@ class User
 		void logHistory(int);
 		string search(int);
 		int menu();
-		void display(User);
+		void display();
 
 };
 
@@ -57,6 +57,8 @@ void User::login()
 	cin >> pass;
 
 	usr.setValues(nm, em, pass);
+
+	cout << "Welcome" << usr.getName() << endl;
 }
 
 void User::getProd(string fname, int val)
@@ -118,7 +120,6 @@ int User::menu()
 	int num;
 	User usr;
 
-	cout << "Welcome" << usr.getName() << endl;
 
 	cout << "\nHome Remedy Menu: " << endl
 		<< "====================================" << endl
@@ -158,8 +159,9 @@ void User::logHistory(int op)
 	}
 }
 
-void User::display(User usr)
+void User::display()
 {
+	User usr;
 	int option;
 	string file;
 
@@ -176,7 +178,7 @@ int main()
 {
 	User person;
 	
-	person.display(person);
+	person.display();
 
 	system("Pause");
 	return 0;
