@@ -6,8 +6,15 @@
 #include <fstream>
 #include <cstring>
 #include <ctime>
+#include <chrono>
+#include <time.h>
+
 
 using namespace std;
+
+//auto timenow = chrono::system_clock::to_time_t(chrono::system_clock::now());
+char str[26];
+time_t result = time(NULL);
 
 class User
 {
@@ -76,23 +83,27 @@ int menu(User usr)
 	return num;
 }
 
-string search(int num, User usr)
+string search(int num, User& usr)
 {
-	string name;
+	string name, remedy;
 
 	switch (num)
 	{
 	case 1:
 		name = "Cold.txt";
+		remedy = "Common cold remedy";
 		break;
 	case 2:
 		name = "headache.txt";
+		remedy = "Headache remedy";
 		break;
 	case 3:
 		name = "back.txt";
+		remedy = "Sore back remedy";
 		break;
 	case 4:
 		name = "throat.txt";
+		remedy = "Sore throat remedy";
 		break;
 	case 5:
 		break;
@@ -101,7 +112,7 @@ string search(int num, User usr)
 		break;
 	}
 
-	usr.setRem(name);
+	usr.setRem(remedy);
 	return name;
 }
 
@@ -119,9 +130,11 @@ void getProd(string fname)
 		while (getline(inFile, line))
 		{
 			product = line;
+			cout << product;
+			cout << '\n';
 		}
 
-		cout << product;
+		
 	}
 }
 
@@ -129,13 +142,9 @@ void logHistory(User usr)
 {
 	string fname = "log.txt";
 	ofstream outFile;
+	ctime_s(str, sizeof str, &result);
 
-	/*time_t tt;
-	struct tm * ti;
-	time(&tt);
-	ti = localtime(&tt);*/
-
-	outFile.open(fname.c_str());
+	outFile.open(fname.c_str(), ios_base::app);
 
 	if (outFile.fail())
 	{
@@ -143,7 +152,7 @@ void logHistory(User usr)
 	}
 	else
 	{
-		outFile << usr.getName() << " Searched for " << usr.getRem() << " on " << /*asctime(ti)*/ endl;
+		outFile << usr.getName() << " Searched for " << usr.getRem() << " on " << str << endl;
 		outFile.close();
 		cout << "\n\nSession logged!" << endl;
 	}
