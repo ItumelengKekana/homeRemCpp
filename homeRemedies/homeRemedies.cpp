@@ -6,13 +6,10 @@
 #include <fstream>
 #include <cstring>
 #include <ctime>
-#include <chrono>
-#include <time.h>
 
 
 using namespace std;
 
-//auto timenow = chrono::system_clock::to_time_t(chrono::system_clock::now());
 char str[26];
 time_t result = time(NULL);
 
