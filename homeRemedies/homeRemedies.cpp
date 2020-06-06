@@ -16,31 +16,25 @@ time_t result = time(NULL);
 class User
 {
 	private:
-		string name, email, password, remedy;
+		string name, remedy;
 
 	public: 
 		User();
-		void setValues(string, string, string);
+		void setValues(string);
 		void setRem(string);
 		string getName() { return name; };
-		string getPass() { return password; };
-		string getEmail() { return email; };
 		string getRem() { return remedy; };
 };
 
 User::User()
 {
 	name = " ";
-	email = " ";
-	password = " ";
 	remedy = " ";
 }
 
-void User::setValues(string nm, string em, string pass)
+void User::setValues(string nm)
 {
 	name = nm;
-	email = em;
-	password = pass;
 }
 
 void User::setRem(string rm)
@@ -50,16 +44,12 @@ void User::setRem(string rm)
 
 void login(User& usr)
 {	
-	string nm, em, pass;
+	string nm;
 
 	cout << "Enter your username: ";
 	cin >> nm;
-	cout << "Enter your email: ";
-	cin >> em;
-	cout << "Enter your password: ";
-	cin >> pass;
 
-	usr.setValues(nm, em, pass);
+	usr.setValues(nm);
 }
 
 int menu(User usr)
@@ -103,6 +93,7 @@ string search(int num, User& usr)
 		remedy = "Sore throat remedy";
 		break;
 	case 5:
+		cout << "Goodbye!" << endl;
 		break;
 	default:
 		cout << "Please enter a valid option";
@@ -145,7 +136,7 @@ void logHistory(User usr)
 
 	if (outFile.fail())
 	{
-		cout << "The session was not successfully logged!";
+		cout << "The session was not logged";
 	}
 	else
 	{
@@ -161,10 +152,13 @@ void display(User usr)
 	string file;
 
 	login(usr);
-	option = menu(usr);
-	file = search(option, usr);
-	getProd(file);
-	logHistory(usr);
+
+	do {
+		option = menu(usr);
+		file = search(option, usr);
+		getProd(file);
+		logHistory(usr);
+	} while (option != 5);
 }
 
 

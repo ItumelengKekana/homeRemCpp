@@ -1,12 +1,3 @@
-itu Searched for Cold.txt on 
-itumeleng Searched for Cold.txt on 
-admin Searched for Cold.txt on 
-admin Searched for Cold.txt on 
-admin Searched for Cold.txt on 
-admin Searched for Cold.txt on 
-ItuAdmin Searched for Cold.txt on 0
-itu Searched for Cold.txt on 0
-timetest Searched for Cold.txt on 0
 timeTest Searched for Cold.txt on Wed Jun  3 20:07:23 2020
 
 Bacchus Searched for back.txt on Wed Jun  3 20:43:13 2020
@@ -14,4 +5,22 @@ Bacchus Searched for back.txt on Wed Jun  3 20:43:13 2020
 Iris Searched for Headache remedy on Wed Jun  3 20:47:51 2020
 
 Angus Searched for Sore back remedy on Wed Jun  3 20:54:05 2020
+
+itu Searched for Sore back remedy on Sat Jun  6 19:12:23 2020
+
+admin Searched for  on Sat Jun  6 19:13:00 2020
+
+testr Searched for Headache remedy on Sat Jun  6 19:15:56 2020
+
+testr Searched for  on Sat Jun  6 19:15:56 2020
+
+itu Searched for Sore throat remedy on Sat Jun  6 19:17:34 2020
+
+itu Searched for Common cold remedy on Sat Jun  6 19:17:34 2020
+
+itu Searched for Sore back remedy on Sat Jun  6 19:17:34 2020
+
+itu Searched for Headache remedy on Sat Jun  6 19:17:34 2020
+
+itu Searched for  on Sat Jun  6 19:17:34 2020
 
